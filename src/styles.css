@@ -1,0 +1,727 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0f1418;
+  --color-foreground: #f0f2f5;
+
+  --color-card: #141a1f;
+  --color-card-foreground: #f0f2f5;
+
+  --color-primary: #20b2a6;
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: #1f2830;
+  --color-secondary-foreground: #20b2a6;
+
+  --color-muted: #252e37;
+  --color-muted-foreground: #7a8491;
+
+  --color-accent: #1f2830;
+  --color-accent-foreground: #20b2a6;
+
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #ffffff;
+
+  --color-border: #242b32;
+  --color-input: #242b32;
+  --color-ring: #20b2a6;
+
+  --color-popover: #141a1f;
+  --color-popover-foreground: #f0f2f5;
+
+  --color-highlight: #f5a623;
+  --color-surface: #1a2329;
+
+  --radius: 0.75rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: "Inter", sans-serif;
+    overflow-x: hidden;
+  }
+
+  .font-serif {
+    font-family: "Playfair Display", serif;
+  }
+}
+
+@layer components {
+  .glass {
+    background-color: color-mix(in srgb, var(--color-surface) 50%, transparent);
+    backdrop-filter: blur(16px);
+    border: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
+  }
+
+  .glass-strong {
+    background-color: color-mix(in srgb, var(--color-surface) 80%, transparent);
+    backdrop-filter: blur(24px);
+    border: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
+  }
+
+  .glow-text {
+    text-shadow: 0 0 30px color-mix(in srgb, var(--color-primary) 50%, transparent);
+  }
+
+  .glow-border {
+    box-shadow:
+      0 0 20px color-mix(in srgb, var(--color-primary) 20%, transparent),
+      inset 0 0 20px color-mix(in srgb, var(--color-primary) 5%, transparent);
+  }
+}
+
+@layer utilities {
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+  }
+
+  @keyframes slow-drift {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(20px, -30px);
+    }
+    50% {
+      transform: translate(-15px, -20px);
+    }
+    75% {
+      transform: translate(30px, 10px);
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes logo-shimmer {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 200% 50%;
+    }
+  }
+
+  @keyframes logo-breathe {
+    0%,
+    100% {
+      filter: drop-shadow(0 0 3px color-mix(in srgb, #26c4b8 25%, transparent));
+      transform: scale(1);
+    }
+    50% {
+      filter: drop-shadow(0 0 10px color-mix(in srgb, #26c4b8 55%, transparent))
+        drop-shadow(0 0 18px color-mix(in srgb, #26c4b8 22%, transparent));
+      transform: scale(1.03);
+    }
+  }
+
+  @keyframes logo-dot-pulse {
+    0%,
+    100% {
+      opacity: 0.85;
+      transform-box: fill-box;
+      transform-origin: center;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform-box: fill-box;
+      transform-origin: center;
+      transform: scale(1.35);
+    }
+  }
+
+  @keyframes logo-draw {
+    0% {
+      stroke-dashoffset: 80;
+    }
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  .animate-logo-shimmer {
+    animation: logo-shimmer 6s linear infinite;
+  }
+
+  .logo-mark {
+    background: transparent;
+    backdrop-filter: none;
+    box-shadow: none;
+    animation: logo-breathe 7s ease-in-out infinite;
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform, filter;
+  }
+
+  .logo-mark svg circle {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: logo-dot-pulse 4.2s ease-in-out infinite;
+  }
+
+  .logo-mark svg g path {
+    stroke-dasharray: 80;
+    stroke-dashoffset: 0;
+  }
+
+  .group:hover .logo-mark {
+    transform: rotate(-4deg) scale(1.08);
+  }
+
+  .group:hover .logo-mark svg g path {
+    animation: logo-draw 2s ease-out forwards;
+  }
+
+  .logo-shimmer {
+    display: none;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out both;
+  }
+
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+  .animation-delay-800 {
+    animation-delay: 800ms;
+  }
+
+  @keyframes animated-border {
+    0% {
+      stroke-dashoffset: 400;
+    }
+    100% {
+      stroke-dashoffset: -550;
+    }
+  }
+
+  .group:hover .animated-border-path {
+    animation: animated-border 1.5s linear infinite;
+  }
+
+  .animated-border:hover {
+    background-color: color-mix(in srgb, #26c4b8 15%, transparent);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 0 20px color-mix(in srgb, #26c4b8 20%, transparent);
+  }
+
+  .timeline-glow {
+    box-shadow:
+      0 0 40px color-mix(in srgb, var(--color-primary) 35%, transparent),
+      0 0 80px color-mix(in srgb, var(--color-primary) 25%, transparent);
+  }
+
+  @keyframes btn-contact-sweep {
+    0% {
+      transform: translateX(-120%) skewX(-18deg);
+    }
+    60% {
+      transform: translateX(220%) skewX(-18deg);
+    }
+    100% {
+      transform: translateX(220%) skewX(-18deg);
+    }
+  }
+
+  .btn-contact-premium {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background-image: linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--color-primary) 42%, transparent) 0%,
+      color-mix(in srgb, var(--color-primary) 34%, transparent) 55%,
+      color-mix(in srgb, var(--color-primary) 40%, transparent) 100%
+    );
+    backdrop-filter: blur(8px);
+    box-shadow:
+      0 0 0 1px color-mix(in srgb, var(--color-primary) 14%, transparent),
+      0 2px 8px color-mix(in srgb, var(--color-primary) 8%, transparent);
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+    will-change: transform, box-shadow;
+  }
+
+  .btn-contact-premium::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      color-mix(in srgb, #ffffff 18%, transparent) 50%,
+      transparent 100%
+    );
+    transform: translateX(-120%) skewX(-18deg);
+    animation: btn-contact-sweep 5.5s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .btn-contact-premium > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  .btn-contact-premium:hover {
+    transform: translateY(-1.5px);
+    box-shadow:
+      0 0 0 1px color-mix(in srgb, var(--color-primary) 22%, transparent),
+      0 3px 12px color-mix(in srgb, var(--color-primary) 12%, transparent);
+  }
+
+  .btn-contact-premium:active {
+    transform: translateY(0);
+    transition: transform 0.1s ease;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .btn-contact-premium::before {
+      animation: none;
+      opacity: 0;
+    }
+  }
+
+  .btn-contact-premium svg {
+    transition: transform 0.3s ease;
+  }
+
+  .btn-contact-premium:hover svg,
+  .btn-contact-premium:focus-visible svg,
+  .btn-contact-premium:active svg {
+    transform: translateX(3px);
+  }
+
+  /* Chatbot widget */
+  @keyframes chatbot-float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-4px);
+    }
+  }
+  @keyframes chatbot-ring-pulse {
+    0% {
+      transform: scale(0.95);
+      opacity: 0.55;
+    }
+    70% {
+      transform: scale(1.4);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1.4);
+      opacity: 0;
+    }
+  }
+  @keyframes chatbot-dot {
+    0%,
+    80%,
+    100% {
+      transform: translateY(0);
+      opacity: 0.4;
+    }
+    40% {
+      transform: translateY(-3px);
+      opacity: 1;
+    }
+  }
+  @keyframes chatbot-panel-in {
+    from {
+      opacity: 0;
+      transform: translateY(8px) scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  @keyframes chatbot-panel-out {
+    from {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(8px) scale(0.98);
+    }
+  }
+
+  .chatbot-launcher-bare {
+    background: transparent;
+    border: none;
+    animation: chatbot-float 5s ease-in-out infinite;
+    transition:
+      transform 0.3s ease,
+      filter 0.3s ease;
+    filter: drop-shadow(0 0 2px color-mix(in srgb, var(--color-primary) 14%, transparent))
+      drop-shadow(0 0 5px color-mix(in srgb, var(--color-primary) 7%, transparent));
+  }
+  .chatbot-launcher-bare:hover,
+  .chatbot-launcher-bare:focus-visible {
+    transform: translateY(-2px) scale(1.06);
+    filter: drop-shadow(0 0 3px color-mix(in srgb, var(--color-primary) 22%, transparent))
+      drop-shadow(0 0 7px color-mix(in srgb, var(--color-primary) 12%, transparent));
+  }
+  .chatbot-launcher-bare:active {
+    transform: translateY(-1px) scale(1.02);
+  }
+
+  .chatbot-panel {
+    background: color-mix(in srgb, var(--color-card) 92%, transparent);
+    backdrop-filter: blur(18px);
+    border: 1px solid color-mix(in srgb, var(--color-border) 70%, transparent);
+    border-radius: 1rem;
+    box-shadow:
+      0 20px 50px -20px rgba(0, 0, 0, 0.6),
+      0 0 0 1px color-mix(in srgb, var(--color-primary) 8%, transparent),
+      0 0 30px -10px color-mix(in srgb, var(--color-primary) 25%, transparent);
+    animation: chatbot-panel-in 0.25s ease-out;
+  }
+  .chatbot-panel-closing {
+    animation: chatbot-panel-out 0.22s ease-in forwards;
+  }
+
+  .chatbot-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 9999px;
+    background: color-mix(in srgb, var(--color-primary) 75%, transparent);
+    animation: chatbot-dot 1.1s ease-in-out infinite;
+  }
+
+  @keyframes chatbot-loading-fade-inout {
+    0% {
+      opacity: 0;
+      transform: translateY(3px);
+    }
+    15% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    85% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-3px);
+    }
+  }
+  .chatbot-loading-text {
+    display: inline-block;
+    animation: chatbot-loading-fade-inout 2.5s ease-in-out;
+  }
+
+  .chatbot-loading-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .chatbot-thinking-dots {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+  }
+  .chatbot-thinking-dots span {
+    width: 5px;
+    height: 5px;
+    border-radius: 9999px;
+    background: color-mix(in srgb, var(--color-primary) 80%, transparent);
+    box-shadow: 0 0 6px color-mix(in srgb, var(--color-primary) 45%, transparent);
+    animation: chatbot-thinking-pulse 1.3s ease-in-out infinite;
+  }
+  .chatbot-thinking-dots span:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .chatbot-thinking-dots span:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  @keyframes chatbot-thinking-pulse {
+    0%,
+    100% {
+      opacity: 0.35;
+      transform: translateY(0) scale(0.85);
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(-2px) scale(1);
+    }
+  }
+
+  .chatbot-link-pill {
+    transition:
+      transform 0.2s ease,
+      background-color 0.2s ease,
+      border-color 0.2s ease;
+  }
+  .chatbot-link-pill:hover {
+    transform: translateY(-1px);
+  }
+  .chatbot-icon-float {
+    animation: chatbot-icon-float 2.4s ease-in-out infinite;
+  }
+  .chatbot-link-pill:hover .chatbot-icon-float {
+    animation: chatbot-icon-dart 0.6s ease-out forwards;
+  }
+  .chatbot-icon-bounce {
+    animation: chatbot-icon-bounce 1.8s ease-in-out infinite;
+  }
+  .chatbot-link-pill:hover .chatbot-icon-bounce {
+    animation: chatbot-icon-drop 0.6s ease-in forwards;
+  }
+  @keyframes chatbot-icon-float {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(1px, -1px);
+    }
+  }
+  @keyframes chatbot-icon-dart {
+    0% {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+    60% {
+      transform: translate(3px, -3px);
+      opacity: 0.9;
+    }
+    100% {
+      transform: translate(2px, -2px);
+      opacity: 1;
+    }
+  }
+  @keyframes chatbot-icon-bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(1.5px);
+    }
+  }
+  @keyframes chatbot-icon-drop {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(3px);
+      opacity: 0.7;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .chatbot-launcher-bare,
+    .chatbot-dot,
+    .chatbot-panel,
+    .chatbot-icon-float,
+    .chatbot-icon-bounce,
+    .chatbot-link-pill {
+      animation: none;
+      transition: none;
+    }
+  }
+
+  .chatbot-cta-btn {
+    background-image: linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--color-primary) 38%, transparent) 0%,
+      color-mix(in srgb, var(--color-primary) 28%, transparent) 100%
+    );
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-primary) 14%, transparent);
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.25s ease,
+      filter 0.25s ease;
+  }
+  .chatbot-cta-btn:hover,
+  .chatbot-cta-btn:focus-visible {
+    transform: translateY(-1px) scale(1.015);
+    box-shadow:
+      0 0 0 1px color-mix(in srgb, var(--color-primary) 22%, transparent),
+      0 3px 10px color-mix(in srgb, var(--color-primary) 14%, transparent);
+  }
+  .chatbot-cta-btn:active {
+    transform: translateY(0) scale(0.97);
+    transition: transform 0.1s ease;
+  }
+}
+
+@layer utilities {
+  /* Themed scrollbar for the chatbot messages area */
+  .chatbot-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in srgb, var(--color-primary) 55%, transparent) transparent;
+  }
+  .chatbot-scroll::-webkit-scrollbar {
+    width: 6px;
+  }
+  .chatbot-scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .chatbot-scroll::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--color-primary) 70%, transparent),
+      color-mix(in srgb, var(--color-primary) 35%, transparent)
+    );
+    border-radius: 9999px;
+    border: 1px solid color-mix(in srgb, var(--color-border) 40%, transparent);
+  }
+  .chatbot-scroll::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(
+      180deg,
+      var(--color-primary),
+      color-mix(in srgb, var(--color-primary) 60%, transparent)
+    );
+  }
+
+  /* Themed scrollbar for the certifications carousel */
+  .cert-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: #22c7b8 rgba(15, 23, 28, 0.4);
+  }
+  .cert-scroll::-webkit-scrollbar {
+    height: 8px;
+    background: transparent;
+  }
+  .cert-scroll::-webkit-scrollbar-track {
+    background: rgba(15, 23, 28, 0.4);
+    border-radius: 9999px;
+    margin: 0 8px;
+  }
+  .cert-scroll::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+  .cert-scroll::-webkit-scrollbar-thumb {
+    background: linear-gradient(90deg, #22c7b8, color-mix(in srgb, #22c7b8 55%, transparent));
+    border-radius: 9999px;
+    border: 1px solid rgba(15, 23, 28, 0.4);
+    box-shadow: 0 0 8px color-mix(in srgb, #22c7b8 45%, transparent);
+  }
+  .cert-scroll::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(90deg, #2ee0cf, #22c7b8);
+    box-shadow: 0 0 12px color-mix(in srgb, #22c7b8 70%, transparent);
+  }
+
+  .project-glow {
+    position: relative;
+    isolation: isolate;
+  }
+  .project-glow::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+      400px circle at var(--mx, 50%) var(--my, 50%),
+      color-mix(in srgb, var(--color-primary) 18%, transparent),
+      transparent 60%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .project-glow:hover::before {
+    opacity: 1;
+  }
+  .project-glow > * {
+    position: relative;
+    z-index: 2;
+  }
+  @keyframes carousel-arrow-pulse {
+    0%,
+    100% {
+      box-shadow: 0 0 10px color-mix(in srgb, var(--color-primary) 20%, transparent);
+    }
+    50% {
+      box-shadow: 0 0 18px color-mix(in srgb, var(--color-primary) 50%, transparent);
+    }
+  }
+  .carousel-nav-arrow {
+    animation: carousel-arrow-pulse 2.6s ease-in-out infinite;
+  }
+  .carousel-nav-arrow:hover {
+    animation: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .carousel-nav-arrow {
+      animation: none;
+    }
+  }
+}
