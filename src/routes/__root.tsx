@@ -26,50 +26,80 @@ function NotFoundComponent() {
 
 export const Route = createRootRoute({
   head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      {
-        name: "description",
-        content:
-          "This application is a personal portfolio website showcasing a software engineer's skills and projects.",
-      },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      {
-        property: "og:description",
-        content:
-          "This application is a personal portfolio website showcasing a software engineer's skills and projects.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "Lovable App" },
-      {
-        name: "twitter:description",
-        content:
-          "This application is a personal portfolio website showcasing a software engineer's skills and projects.",
-      },
-      {
-        property: "og:image",
-        content:
-          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/0e555081-797b-4781-b91e-47b9ad68e2d1/id-preview-09816ea8--3607db54-0328-4801-9be2-229d899bd600.lovable.app-1778648906587.png",
-      },
-      {
-        name: "twitter:image",
-        content:
-          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/0e555081-797b-4781-b91e-47b9ad68e2d1/id-preview-09816ea8--3607db54-0328-4801-9be2-229d899bd600.lovable.app-1778648906587.png",
-      },
-    ],
-    links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
-      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
-    ],
-  }),
+  meta: [
+    { charSet: "utf-8" },
+    { name: "viewport", content: "width=device-width, initial-scale=1" },
+
+    { title: "Ravi Kumar P | CCM Consultant & Cloud-Native Solutions" },
+
+    {
+      name: "description",
+      content:
+        "Portfolio of Ravi Kumar P, a CCM Consultant specializing in OpenText Exstream, enterprise customer communications, AI workflow orchestration, RAG solutions, and cloud-native environments.",
+    },
+
+    { name: "author", content: "Ravi Kumar P" },
+
+    {
+      property: "og:title",
+      content: "Ravi Kumar P | CCM Consultant & Cloud-Native Solutions",
+    },
+
+    {
+      property: "og:description",
+      content:
+        "Explore Ravi Kumar P's portfolio featuring OpenText Exstream, enterprise CCM support, AI workflow orchestration, RAG-powered assistant, cloud-native solutions, certifications, and projects.",
+    },
+
+    {
+      property: "og:type",
+      content: "website",
+    },
+
+    {
+      property: "og:url",
+      content: "https://ravikumarp.com",
+    },
+
+    {
+      property: "og:image",
+      content: "https://ravikumarp.com/favicon.svg",
+    },
+
+    {
+      name: "twitter:card",
+      content: "summary_large_image",
+    },
+
+    {
+      name: "twitter:title",
+      content: "Ravi Kumar P | CCM Consultant & Cloud-Native Solutions",
+    },
+
+    {
+      name: "twitter:description",
+      content:
+        "Explore Ravi Kumar P's portfolio featuring OpenText Exstream, enterprise CCM support, AI workflow orchestration, RAG-powered assistant, cloud-native solutions, certifications, and projects.",
+    },
+
+    {
+      name: "twitter:image",
+      content: "https://ravikumarp.com/favicon.svg",
+    },
+  ],
+
+  links: [
+    {
+      rel: "stylesheet",
+      href: appCss,
+    },
+    {
+      rel: "icon",
+      type: "image/svg+xml",
+      href: "/favicon.svg",
+    },
+  ],
+}),
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
