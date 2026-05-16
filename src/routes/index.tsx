@@ -11,22 +11,36 @@ import { Contact } from "../sections/Contact";
 import { ChatbotWidget } from "../components/ChatbotWidget";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Ravi Kumar P" },
-      {
-        name: "description",
-        content:
-          "Portfolio of Ravi Kumar — software engineer specializing in React, Next.js, and TypeScript. Building scalable, performant web applications.",
-      },
-      { property: "og:title", content: "Ravi Kumar — Software Engineer" },
-      {
-        property: "og:description",
-        content:
-          "Crafting digital experiences with precision. React, Next.js, TypeScript specialist.",
-      },
-    ],
-  }),
+  meta: [
+    { title: "Ravi Kumar P | CCM Consultant & Cloud-Native Solutions" },
+    {
+      name: "description",
+      content:
+        "Portfolio of Ravi Kumar P, a CCM Consultant specializing in OpenText Exstream, enterprise customer communications, AI workflow orchestration, RAG solutions, and cloud-native environments.",
+    },
+    {
+      property: "og:title",
+      content: "Ravi Kumar P | CCM Consultant & Cloud-Native Solutions",
+    },
+    {
+      property: "og:description",
+      content:
+        "Explore Ravi Kumar P's portfolio featuring OpenText Exstream, enterprise CCM support, AI workflow orchestration, RAG-powered assistant, cloud-native solutions, certifications, and projects.",
+    },
+    {
+      property: "og:image",
+      content: "https://ravikumarp.com/favicon.svg",
+    },
+    {
+      property: "og:url",
+      content: "https://ravikumarp.com",
+    },
+    {
+      name: "twitter:card",
+      content: "summary",
+    },
+  ],
+}),
   component: Index,
 });
 
