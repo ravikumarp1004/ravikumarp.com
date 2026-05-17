@@ -17,7 +17,7 @@ const allTechnologies = [
 
   // ITSM & Operations
   "Incident Management",
-  "ServiceNow / Jira",
+  "ServiceNow/SM9/Jira",
   "Managed Services",
 
   // AI & Automation
