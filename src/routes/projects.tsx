@@ -14,12 +14,12 @@ export const Route = createFileRoute("/projects")({
       {
         name: "description",
         content:
-          "A complete collection of projects built by Ravi Kumar — React, Next.js, TypeScript, full-stack web applications.",
+          "A complete collection of projects by Ravi Kumar P - featuring AI-powered automation workflows and RAG-based chatbot built on n8n, Pinecone, and cloud-native platforms.",
       },
       { property: "og:title", content: PROJECTS_PAGE_TITLE },
       {
         property: "og:description",
-        content: "Explore the full project portfolio of Ravi Kumar.",
+        content: "Production-deployed projects by Ravi Kumar P - AI workflow orchestration, RAG chatbot, and Exstream cloud-native solutions.",
       },
     ],
   }),
@@ -82,7 +82,7 @@ function AllProjectsPage() {
                 All <span className="font-serif italic font-normal text-white">projects.</span>
               </h1>
               <p className="text-muted-foreground animate-fade-in animation-delay-200">
-                A showcase of my production-ready systems – spanning AI-powered automation and
+                A showcase of my production-ready systems - spanning AI-powered automation and
                 scalable cloud-native solutions
               </p>
             </div>
