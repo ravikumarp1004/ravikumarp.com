@@ -15,13 +15,13 @@ const highlights = [
   {
     icon: Workflow,
     title: "Incident & Issue Resolution",
-    description: "Handling ServiceNow tickets and resolving workflow and output-related issues.",
+    description: "Resolving incidents and workflow issues through SM9, Jira, and ServiceNow for enterprise Exstream environments.",
   },
   {
     icon: Users,
     title: "Continuous Learning",
     description:
-      "Improving every day across Exstream, cloud platforms, and modern CCM practices, while exploring AI tools and building personal projects.",
+      "Continuously improving across Exstream, cloud platforms, and AI automation-building real workflows using n8n, LLM integration, and RAG-based systems.",
   },
 ];
 
@@ -44,24 +44,16 @@ export const About = () => {
 
             <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200">
               <p>
-                I'm a CCM professional with 4+ years of experience at OpenText, delivering scalable
-                customer communication solutions across server-based and cloud-native environments.
+                CCM Engineer with 4+ years at OpenText, specialising in Exstream server-based and cloud-native platform support across AWS, Azure, and GCP.
               </p>
               <p>
-                Supporting enterprise customers through ServiceNow by resolving critical system
-                issues, handling platform upgrades, and maintaining high availability of OpenText
-                Exstream environments. Focus on troubleshooting complex CCM workflows and ensuring
-                stable, reliable managed services delivery.
+                I manage platform upgrades, patching, incident resolution, and workflow troubleshooting for enterprise clients-maintaining high availability of Exstream environments and handling incidents through SM9, Jira, and ServiceNow.
               </p>
               <p>
-                As an AWS Certified Cloud Practitioner (CLF-C02), I have a good foundation in cloud
-                architecture, security, and cost optimisation. I actively work across AWS, Azure,
-                and GCP, contributing to multi-cloud CCM environments and modernisation efforts.
+                Certified AWS Cloud Practitioner with hands-on exposure to multi-cloud CCM environments and modernisation projects.
               </p>
               <p>
-                I enjoy working at the intersection of legacy systems and modern cloud platforms,
-                helping organisations improve, scale, and future-proof their customer communication
-                systems.
+                Outside my core role, I build AI-powered automation workflows using n8n, LLM integration, and RAG-based systems-applying modern tooling to real problems.
               </p>
             </div>
 
