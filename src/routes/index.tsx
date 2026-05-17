@@ -19,16 +19,16 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Portfolio of Ravi Kumar P, a CCM Consultant specializing in OpenText Exstream, enterprise customer communications, AI workflow orchestration, RAG solutions, and cloud-native environments.",
+          "Portfolio of Ravi Kumar P, a CCM Engineer specialising in OpenText Exstream, platform upgrades, cloud-native CCM environments, AI workflow orchestration, and RAG-based systems.",
       },
       {
         property: "og:title",
-        content: "Ravi Kumar P | CCM Consultant & Cloud-Native Solutions",
+        content: "Ravi Kumar P | CCM Engineer | AI Workflow Orchestration & Cloud-Native",
       },
       {
         property: "og:description",
         content:
-          "Explore Ravi Kumar P's portfolio featuring OpenText Exstream, enterprise CCM support, AI workflow orchestration, RAG-powered assistant, cloud-native solutions, certifications, and projects.",
+          "Portfolio of Ravi Kumar P, a CCM Engineer specialising in OpenText Exstream, cloud-native platform support, AI workflow orchestration, and RAG-based automation systems.",
       },
       {
         property: "og:image",
