@@ -30,25 +30,25 @@ export const Route = createRootRoute({
     { charSet: "utf-8" },
     { name: "viewport", content: "width=device-width, initial-scale=1" },
 
-    { title: "Ravi Kumar P | CCM Consultant & Cloud-Native Solutions" },
+    { title: "Ravi Kumar P | CCM Engineer | AI Workflow Orchestration & Cloud-Native" },
 
     {
       name: "description",
       content:
-        "Portfolio of Ravi Kumar P, a CCM Consultant specializing in OpenText Exstream, enterprise customer communications, AI workflow orchestration, RAG solutions, and cloud-native environments.",
+        "Portfolio of Ravi Kumar P, a CCM Engineer specialising in OpenText Exstream, platform upgrades, cloud-native CCM environments, AI workflow orchestration, and RAG-based automation systems.",
     },
 
     { name: "author", content: "Ravi Kumar P" },
 
     {
       property: "og:title",
-      content: "Ravi Kumar P | CCM Consultant & Cloud-Native Solutions",
+      content: "Ravi Kumar P | CCM Engineer | AI Workflow Orchestration & Cloud-Native",
     },
 
     {
       property: "og:description",
       content:
-        "Explore Ravi Kumar P's portfolio featuring OpenText Exstream, enterprise CCM support, AI workflow orchestration, RAG-powered assistant, cloud-native solutions, certifications, and projects.",
+        "Explore Ravi Kumar P's portfolio featuring OpenText Exstream support, platform upgrades, incident resolution, AI workflow orchestration, RAG-powered chatbot, and cloud-native CCM projects.",
     },
 
     {
@@ -73,13 +73,13 @@ export const Route = createRootRoute({
 
     {
       name: "twitter:title",
-      content: "Ravi Kumar P | CCM Consultant & Cloud-Native Solutions",
+      content: "Ravi Kumar P | CCM Engineer | AI Workflow Orchestration & Cloud-Native",
     },
 
     {
       name: "twitter:description",
       content:
-        "Explore Ravi Kumar P's portfolio featuring OpenText Exstream, enterprise CCM support, AI workflow orchestration, RAG-powered assistant, cloud-native solutions, certifications, and projects.",
+        "Explore Ravi Kumar P's portfolio featuring OpenText Exstream support, platform upgrades, incident resolution, AI workflow orchestration, RAG-powered chatbot, and cloud-native CCM projects.",
     },
 
     {
