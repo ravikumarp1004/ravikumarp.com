@@ -1,9 +1,9 @@
 export const profile = {
   name: "Ravi Kumar P",
   initials: "RK",
-  title: "Cloud Application Engineer | Exstream (CCM) | Cloud Platforms",
+  title: "CCM Engineer | OpenText Exstream | Cloud-Native Platforms",
   tagline: "Building reliability into systems, one solution at a time.",
-  bio: "CCM professional with 4+ years of experience working on OpenText Exstream across server-based and cloud-native environments. Focused on enterprise incident handling, platform upgrades, and multi-cloud CCM across AWS, Azure, and GCP.",
+  bio: "CCM Engineer with 4+ years at OpenText, supporting Exstream across server-based and cloud-native environments - managing upgrades, patching, incident resolution, and multi-cloud CCM across AWS, Azure, and GCP.",
   yearsExperience: "4+",
   // Toggle to re-enable the "Open to Opportunities" badge (Hero) and card (Contact).
   // Set both to true when actively open to new roles.
@@ -26,7 +26,7 @@ export const profile = {
 
     // ITSM & Operations
     "Incident Management",
-    "ServiceNow / Jira",
+    "ServiceNow/SM9/Jira",
     "Managed Services",
 
     // AI & Automation
