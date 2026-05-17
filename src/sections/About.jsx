@@ -47,13 +47,13 @@ export const About = () => {
                 CCM Engineer with 4+ years at OpenText, specialising in Exstream server-based and cloud-native platform support across AWS, Azure, and GCP.
               </p>
               <p>
-                I manage platform upgrades, patching, incident resolution, and workflow troubleshooting for enterprise clients-maintaining high availability of Exstream environments and handling incidents through SM9, Jira, and ServiceNow.
+                I manage platform upgrades, patching, incident resolution, and workflow troubleshooting for enterprise clients - maintaining high availability of Exstream environments and handling incidents through SM9, Jira, and ServiceNow.
               </p>
               <p>
                 Certified AWS Cloud Practitioner with hands-on exposure to multi-cloud CCM environments and modernisation projects.
               </p>
               <p>
-                Outside my core role, I build AI-powered automation workflows using n8n, LLM integration, and RAG-based systems-applying modern tooling to real problems.
+                Outside my core role, I build AI-powered automation workflows using n8n, LLM integration, and RAG-based systems - applying modern tooling to real problems.
               </p>
             </div>
 
