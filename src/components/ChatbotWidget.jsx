@@ -324,7 +324,7 @@ const renderWithLinks = (text, opts = {}) => {
 };
 
 const WEBHOOK_URL =
-  "https://n8n-w19c.srv1635273.hstgr.cloud/webhook/8f41d40d-d514-4c13-8f8c-141ee7302ea5/chat";
+  //"https:/chat";
 
 const SUGGESTION_OVERLAY_SELECTOR =
   "[class*='quillbot' i],[id*='quillbot' i],[class*='grammarly' i],[data-grammarly],[id*='grammarly' i],[class*='lt-' i],[class*='languagetool' i]";
