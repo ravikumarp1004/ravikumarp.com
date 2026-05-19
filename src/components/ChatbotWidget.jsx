@@ -324,7 +324,7 @@ const renderWithLinks = (text, opts = {}) => {
 };
 
 const WEBHOOK_URL =
-  //"https:/chat";
+  //"https://...../chat";
 
 const SUGGESTION_OVERLAY_SELECTOR =
   "[class*='quillbot' i],[id*='quillbot' i],[class*='grammarly' i],[data-grammarly],[id*='grammarly' i],[class*='lt-' i],[class*='languagetool' i]";
