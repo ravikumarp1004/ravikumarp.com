@@ -349,6 +349,8 @@ const getSessionId = () => {
 export const ChatbotWidget = () => {
   const [open, setOpen] = useState(false);
   const [closing, setClosing] = useState(false);
+  const [autoAttention, setAutoAttention] = useState(false);
+  const [autoOpening, setAutoOpening] = useState(false);
   const [messages, setMessages] = useState([{ role: "assistant", content: INITIAL_MESSAGE }]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
@@ -371,6 +373,57 @@ export const ChatbotWidget = () => {
     }, 2500);
     return () => clearInterval(id);
   }, [loading]);
+
+  // Auto-open chatbot once per session after 18s if user has scrolled ≥15%.
+  // Hard-locked via ref + sessionStorage so timers, scroll, or re-renders
+  // can never trigger a second animation/open.
+  const autoOpenLockRef = useRef(false);
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (autoOpenLockRef.current) return;
+    try {
+      if (sessionStorage.getItem("portfolio-chat-opened") === "1") {
+        autoOpenLockRef.current = true;
+        return;
+      }
+    } catch {}
+
+    let openTimer;
+    let clearOpeningTimer;
+
+    const delayTimer = setTimeout(() => {
+      if (autoOpenLockRef.current) return;
+      const doc = document.documentElement;
+      const scrollable = Math.max(1, (doc.scrollHeight || 0) - (window.innerHeight || 0));
+      const scrolled = (window.scrollY || doc.scrollTop || 0) / scrollable;
+      if (scrolled < 0.20) {
+        autoOpenLockRef.current = true; // condition failed, don't retry this session
+        return;
+      }
+      // Lock immediately — atomic, before any state updates
+      autoOpenLockRef.current = true;
+      try {
+        sessionStorage.setItem("portfolio-chat-opened", "1");
+      } catch {}
+
+      // Step 1: single launcher attention pulse
+      setAutoAttention(true);
+      // Step 2: smooth panel open after pulse completes
+      openTimer = setTimeout(() => {
+        setAutoAttention(false);
+        setAutoOpening(true);
+        setOpen(true);
+        clearOpeningTimer = setTimeout(() => setAutoOpening(false), 450);
+      }, 850);
+    }, 18000);
+
+    return () => {
+      clearTimeout(delayTimer);
+      if (openTimer) clearTimeout(openTimer);
+      if (clearOpeningTimer) clearTimeout(clearOpeningTimer);
+    };
+  }, []);
+
   const scrollRef = useRef(null);
   const inputRef = useRef(null);
   const panelRef = useRef(null);
@@ -518,7 +571,7 @@ export const ChatbotWidget = () => {
         }}
         aria-label={open ? "Close chat assistant" : "Open chat assistant"}
         aria-expanded={open}
-        className="chatbot-launcher-bare fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-50 w-12 h-12 flex items-center justify-center text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-full"
+        className={`chatbot-launcher-bare fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-50 w-12 h-12 flex items-center justify-center text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-full ${autoAttention ? "chatbot-launcher-attention" : ""}`}
       >
         {open ? (
           <X className="w-7 h-7 relative z-10" />
@@ -543,7 +596,7 @@ export const ChatbotWidget = () => {
           className={`chatbot-panel fixed z-50 flex flex-col overflow-hidden
             bottom-24 right-4 left-4 max-h-[70vh]
             sm:left-auto sm:right-6 sm:bottom-24 sm:w-[380px] sm:max-h-[560px]
-          ${closing ? "chatbot-panel-closing" : "chatbot-panel-opening"}`}
+          ${closing ? "chatbot-panel-closing" : autoOpening ? "chatbot-panel-auto-opening" : "chatbot-panel-open"}`}
           onMouseEnter={cancelClose}
           onMouseLeave={(event) => {
             const nextTarget = event.relatedTarget;
