@@ -4,8 +4,8 @@ export const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "ravikumar.p1004@gmail.com",
-    href: "mailto:ravikumar.p1004@gmail.com",
+    value: "ravi@ravikumarp.com",
+    href: "mailto:ravi@ravikumarp.com",
     external: false,
   },
   {
