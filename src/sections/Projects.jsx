@@ -3,10 +3,12 @@ import { ArrowUpRight, ChevronLeft, ChevronRight, Github } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
 import { featuredProjects } from "../data/projects";
+import { ProjectImage } from "../components/ProjectImage";
 
 const FILTERS = ["All", "Cloud Platform", "Enterprise CCM", "Generative AI", "Workflow Automation"];
 
 const PROJECT_CATEGORIES = {
+  "Inventory Management System": ["Workflow Automation", "Generative AI"],
   "Portfolio RAG Chatbot": ["Generative AI"],
   "Contact Message Form": ["Workflow Automation"],
   "Exstream Cloud-Native Workflows": ["Enterprise CCM", "Cloud Platform"],
@@ -431,11 +433,10 @@ export const Projects = () => {
                           style={{ animationDelay: `${(idx + 1) * 100}ms` }}
                         >
                           <div className="relative overflow-hidden aspect-[16/8]">
-                            <img
+                            <ProjectImage
                               src={project.image}
+                              images={project.images}
                               alt={project.title}
-                              loading="lazy"
-                              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent opacity-60" />
                             <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
