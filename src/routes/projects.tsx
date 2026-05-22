@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowUpRight, Github } from "lucide-react";
 import { Navbar } from "../layout/Navbar";
 import { Footer } from "../layout/Footer";
 import { allProjects } from "../data/projects";
+import { ProjectImage } from "../components/ProjectImage";
 
 const PROJECTS_PAGE_TITLE = "All Projects | Ravi Kumar P";
 
@@ -105,11 +106,10 @@ function AllProjectsPage() {
                     style={{ animationDelay: `${(idx + 1) * 100}ms` }}
                   >
                     <div className="relative overflow-hidden aspect-video">
-                      <img
+                      <ProjectImage
                         src={project.image}
+                        images={project.images}
                         alt={project.title}
-                        loading="lazy"
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent opacity-60" />
                       <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
