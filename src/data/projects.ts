@@ -11,7 +11,7 @@ export interface Project {
 const inventoryManagementSystem: Project = {
   title: "Inventory Management System",
   description:
-    "A production-ready AI-powered Inventory Management System built using n8n workflow automation, Google Sheets, API integrations, and AI orchestration. It manages inventory operations through a modern web dashboard integrated with an AI Assistant that performs real-time inventory actions using natural language commands. The app automatically synchronizes frontend inventory data with Google Sheets and enables intelligent operations such as product updates, inventory analytics, stock management, product deletion, and audit tracking.",
+    "A production-ready AI-powered Inventory Management System built using n8n workflow automation, API integrations, and AI orchestration. It manages inventory operations through a modern web dashboard integrated with an AI Assistant that performs real-time inventory actions using natural language commands. The app automatically synchronizes frontend inventory data with Google Sheets and enables intelligent operations such as product updates, inventory analytics, inventory management, product deletion, and audit tracking.",
   image: "/projects/inventory/04-dashboard.png",
   images: [
     "/projects/inventory/01-workflow.png",
@@ -26,13 +26,11 @@ const inventoryManagementSystem: Project = {
   ],
   techStack: [
     "n8n",
-    "Google Sheets",
     "API Integration",
     "AI Orchestration",
-    "OpenAI",
-    "React",
-    "Inventory Automation",
-    "Workflow Automation",
+    "LLM",
+    "Inventory Processing",
+    "Real-Time Sync",
   ],
   liveUrl: "https://paint-inventory-ai-hub.lovable.app",
   githubUrl: "https://github.com/ravikumarp1004/Inventory-Management-System",
@@ -43,7 +41,7 @@ const contactMessageForm: Project = {
   description:
     "An AI-powered contact automation workflow built with n8n. It captures user messages from a portfolio contact form, classifies the intent using LLM automation, stores records in Airtable, sends Gmail notifications, generates a professional reply, and updates the response back in Airtable.",
   image: "/projects/contact-message-form.jpg",
-  techStack: ["n8n", "LLM Automation", "Airtable", "Email Orchestration", "Workflow Processing"],
+  techStack: ["n8n", "LLM Automation", "API Integration", "Airtable", "Email Orchestration", "Workflow Processing"],
   githubUrl: "https://github.com/ravikumarp1004/Contact-Message-Form",
 };
 
@@ -56,6 +54,7 @@ const portfolioRagChatbot: Project = {
     "n8n",
     "RAG",
     "LLM",
+    "API Integration",
     "Pinecone",
     "Vector Search",
     "AI Orchestration",
