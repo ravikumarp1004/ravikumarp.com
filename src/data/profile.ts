@@ -31,7 +31,7 @@ export const profile = {
 
     // AI & Automation
     "Workflow Automation (n8n)",
-    "LLM Integration",
+    "APIs & LLM Integration",
     "RAG (Retrieval-Augmented Generation)",
     "AI Orchestration",
     "Pinecone (Vector Database)",
