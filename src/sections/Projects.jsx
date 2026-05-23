@@ -5,11 +5,11 @@ import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
 import { featuredProjects } from "../data/projects";
 import { ProjectImage } from "../components/ProjectImage";
 
-const FILTERS = ["All", "Cloud Platform", "Enterprise CCM", "Generative AI", "Workflow Automation"];
+const FILTERS = ["All", "Cloud Platform", "Enterprise CCM", "RAG", "Generative AI", "Real-Time Sync", "Workflow Automation"];
 
 const PROJECT_CATEGORIES = {
-  "Inventory Management System": ["Workflow Automation", "Generative AI"],
-  "Portfolio RAG Chatbot": ["Generative AI"],
+  "Inventory Management System": ["Real-Time Sync", "Real-Time Sync"],
+  "Portfolio RAG Chatbot": ["Generative AI, RAG"],
   "Contact Message Form": ["Workflow Automation"],
   "Exstream Cloud-Native Workflows": ["Enterprise CCM", "Cloud Platform"],
 };
