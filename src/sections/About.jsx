@@ -21,7 +21,7 @@ const highlights = [
     icon: Users,
     title: "Continuous Learning",
     description:
-      "Continuously improving across Exstream, cloud platforms, and AI automation-building real workflows using n8n, LLM integration, and RAG-based systems.",
+      "Continuously improving across Exstream, cloud platforms, and AI automation-building real workflows using n8n, APIs integration, LLM, and RAG-based systems.",
   },
 ];
 
@@ -53,7 +53,7 @@ export const About = () => {
                 Certified AWS Cloud Practitioner with hands-on exposure to multi-cloud CCM environments and modernisation projects.
               </p>
               <p>
-                Outside my core role, I build AI-powered automation workflows using n8n, LLM integration, and RAG-based systems - applying modern tooling to real problems.
+                Outside my core role, I build AI-powered automation workflows using n8n, APIs integration, LLM and RAG-based systems - applying modern tooling to real problems.
               </p>
             </div>
 
