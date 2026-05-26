@@ -66,7 +66,7 @@ const portfolioRagChatbot: Project = {
 const exstreamCloudNative: Project = {
   title: "Exstream Cloud-Native Workflows",
   description:
-    "A professional enterprise CCM architecture repository documenting OpenText Exstream workflows across AWS, Azure, and GCP - built from 4+ years of live production support experience covering cloud-native orchestration, document composition, and PDF/AFP output generation.",
+    "A professional enterprise CCM architecture repository documenting OpenText Exstream workflows across AWS, Azure, and GCP — capturing real-world process knowledge from hands-on production support experience, covering cloud-native orchestration, document composition, and PDF/AFP output generation.",
   image: "/projects/exstream-cloud-native-workflows.jpg",
   techStack: [
     "OpenText Exstream",
