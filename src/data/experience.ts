@@ -33,7 +33,7 @@ export const experiences: ExperienceItem[] = [
     role: "Junior Engineer",
     company: "Network Labs (India) Pvt Ltd",
     description:
-      "Worked across the SDLC supporting enterprise networking and communication solutions. Contributed to deployments and integrations, applied analytical problem solving, and strengthened core networking fundamentals while supporting client-facing rollouts.",
+      "Supported enterprise networking and communication solutions across the SDLC - contributing to deployments, integrations, and client-facing rollouts while strengthening core troubleshooting and analytical skills.",
     techStack: ["SDLC", "Networking", "Linux", "Troubleshooting", "Analytical Skills"],
     current: false,
   },
@@ -42,7 +42,7 @@ export const experiences: ExperienceItem[] = [
     role: "Trainee",
     company: "Network Labs (India) Pvt Ltd",
     description:
-      "Apprenticeship focused on hands-on support across networking and system workflows. Built a foundation in enterprise IT operations, gaining early production exposure under guidance.",
+      "Three-month apprenticeship gaining hands-on exposure to enterprise IT operations, networking fundamentals, and production workflows under direct guidance.",
     techStack: ["Networking", "Workflows", "Analytical Skills", "Support"],
     current: false,
   },
