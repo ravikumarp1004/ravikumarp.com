@@ -3,7 +3,7 @@ export const profile = {
   initials: "RK",
   title: "CCM Engineer | OpenText Exstream | Cloud-Native Platforms",
   tagline: "Building reliability into systems, one solution at a time.",
-  bio: "CCM Engineer with 4+ years at OpenText, supporting Exstream across server-based and cloud-native environments - managing upgrades, patching, incident resolution, and multi-cloud CCM across AWS, Azure, and GCP.",
+  bio: "CCM Engineer with 4+ years at OpenText, supporting Exstream across cloud-native and server-based environments - and building AI-powered automation workflows using n8n, LLM integration, and RAG-based systems.",
   yearsExperience: "4+",
   // Toggle to re-enable the "Open to Opportunities" badge (Hero) and card (Contact).
   // Set both to true when actively open to new roles.
