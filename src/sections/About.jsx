@@ -5,23 +5,23 @@ const highlights = [
     icon: FileText,
     title: "Enterprise CCM Support",
     description:
-      "Working on real-world customer communication systems and ensuring they run reliably.",
+      "Supporting enterprise Exstream environments across server-based and cloud-native deployments, ensuring high availability for production clients.",
   },
   {
     icon: Cloud,
     title: "Cloud-Native Environments",
-    description: "Supporting CCM platforms across AWS, Azure, and GCP environments.",
+    description: "Managing CCM platform operations across AWS, Azure, and GCP - including upgrades, patching, and multi-cloud incident resolution.",
   },
   {
     icon: Workflow,
     title: "Incident & Issue Resolution",
-    description: "Resolving incidents and workflow issues through SM9, Jira, and ServiceNow for enterprise Exstream environments.",
+    description: "Handling ServiceNow, SM9, and Jira incidents within agreed SLAs - from triage to resolution for enterprise Exstream environments.",
   },
   {
     icon: Users,
     title: "Continuous Learning",
     description:
-      "Continuously improving across Exstream, cloud platforms, and AI automation-building real workflows using n8n, APIs integration, LLM, and RAG-based systems.",
+      "Expanding beyond core CCM into AI automation - building real workflows using n8n, LLM integration, RAG pipelines, and vector search.",
   },
 ];
 
@@ -53,7 +53,7 @@ export const About = () => {
                 Certified AWS Cloud Practitioner with hands-on exposure to multi-cloud CCM environments and modernisation projects.
               </p>
               <p>
-                Outside my core role, I build AI-powered automation workflows using n8n, APIs integration, LLM and RAG-based systems - applying modern tooling to real problems.
+                Outside my core role, I build AI-powered automation workflows using n8n, APIs integration, LLM and RAG-based systems - applying modern tooling to real problems with live projects in production.
               </p>
             </div>
 
