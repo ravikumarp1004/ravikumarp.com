@@ -535,18 +535,18 @@ export const Projects = () => {
                     type="button"
                     onClick={() => scrollCarousel(-1)}
                     aria-label="Previous project"
-                    className="carousel-nav-arrow group/arrow absolute left-1 sm:left-2 lg:-left-14 top-1/2 -translate-y-1/2 h-9 w-9 sm:h-10 sm:w-10 lg:h-11 lg:w-11 rounded-full bg-background/60 backdrop-blur-md border border-primary/30 text-primary/80 hover:text-primary hover:border-primary hover:scale-110 hover:bg-primary/10 z-20 flex items-center justify-center transition-all duration-300 shadow-[0_0_12px_color-mix(in_srgb,var(--color-primary)_25%,transparent)] hover:shadow-[0_0_20px_color-mix(in_srgb,var(--color-primary)_55%,transparent)]"
+                    className="carousel-nav-arrow group/arrow absolute left-1 sm:left-2 lg:-left-12 top-1/2 -translate-y-1/2 h-6 w-6 sm:h-7 sm:w-7 lg:h-8 lg:w-8 rounded-full bg-transparent border border-primary/10 text-primary/40 hover:text-primary hover:border-primary/60 hover:scale-110 hover:bg-primary/10 z-20 flex items-center justify-center transition-all duration-300 hover:shadow-[0_0_20px_color-mix(in_srgb,var(--color-primary)_45%,transparent)]"
                   >
-                    <ChevronLeft className="h-4 w-4 sm:h-5 sm:w-5 transition-transform duration-300 group-hover/arrow:-translate-x-0.5" />
+                    <ChevronLeft className="h-3 w-3 sm:h-3.5 sm:w-3.5 transition-transform duration-300 group-hover/arrow:-translate-x-0.5" />
                     <span className="sr-only">Previous</span>
                   </button>
                   <button
                     type="button"
                     onClick={() => scrollCarousel(1)}
                     aria-label="Next project"
-                    className="carousel-nav-arrow group/arrow absolute right-1 sm:right-2 lg:-right-14 top-1/2 -translate-y-1/2 h-9 w-9 sm:h-10 sm:w-10 lg:h-11 lg:w-11 rounded-full bg-background/60 backdrop-blur-md border border-primary/30 text-primary/80 hover:text-primary hover:border-primary hover:scale-110 hover:bg-primary/10 z-20 flex items-center justify-center transition-all duration-300 shadow-[0_0_12px_color-mix(in_srgb,var(--color-primary)_25%,transparent)] hover:shadow-[0_0_20px_color-mix(in_srgb,var(--color-primary)_55%,transparent)]"
+                    className="carousel-nav-arrow group/arrow absolute right-1 sm:right-2 lg:-right-12 top-1/2 -translate-y-1/2 h-6 w-6 sm:h-7 sm:w-7 lg:h-8 lg:w-8 rounded-full bg-transparent border border-primary/10 text-primary/40 hover:text-primary hover:border-primary/60 hover:scale-110 hover:bg-primary/10 z-20 flex items-center justify-center transition-all duration-300 hover:shadow-[0_0_20px_color-mix(in_srgb,var(--color-primary)_45%,transparent)]"
                   >
-                    <ChevronRight className="h-4 w-4 sm:h-5 sm:w-5 transition-transform duration-300 group-hover/arrow:translate-x-0.5" />
+                    <ChevronRight className="h-3 w-3 sm:h-3.5 sm:w-3.5 transition-transform duration-300 group-hover/arrow:translate-x-0.5" />
                     <span className="sr-only">Next</span>
                   </button>
                 </>
