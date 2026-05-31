@@ -143,13 +143,15 @@ export const Hero = () => {
 
           <div className="relative animate-fade-in animation-delay-300 mt-8 md:mt-0 md:justify-self-start lg:justify-self-center w-full">
             <div className="relative w-[60%] sm:w-[48%] md:w-full max-w-[240px] sm:max-w-[260px] md:max-w-[260px] lg:max-w-[290px] mx-auto md:ml-0 md:mr-auto lg:mx-auto">
-              <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-primary/20 via-transparent to-primary/10 blur-3xl animate-pulse" />
-              <div className="relative rounded-2xl p-px bg-gradient-to-br from-primary/40 via-border/40 to-primary/20 shadow-[0_0_40px_-10px_rgba(32,178,166,0.35)]">
-                <img
-                  src={profile.profileImage}
-                  alt={profile.name}
-                  className="w-full aspect-[4/5] object-cover object-top rounded-2xl bg-[#0f1418]"
-                />
+              <div className="absolute -inset-4 rounded-full bg-gradient-to-br from-primary/20 via-transparent to-primary/10 blur-3xl animate-pulse" />
+              <div className="relative rounded-full p-[1px] bg-gradient-to-br from-primary/60 via-primary/20 to-primary/40 shadow-[0_0_60px_-5px_rgba(32,178,166,0.5)]">
+                <div className="rounded-full p-[3px] bg-transparent">
+                  <img
+                    src={profile.profileImage}
+                    alt={profile.name}
+                    className="w-full aspect-square object-cover object-top rounded-full bg-[#0f1418]"
+                  />
+                </div>
 
                 {profile.available && (
                   <div className="absolute -bottom-2 -right-2 glass rounded-md px-2 py-1 animate-float">
@@ -162,7 +164,7 @@ export const Hero = () => {
                   </div>
                 )}
 
-                <div className="absolute -top-2 -left-2 glass rounded-md px-2 py-1 animate-float animation-delay-500">
+                <div className="absolute top-1 left-3 glass rounded-md px-2 py-1 animate-float animation-delay-500">
                   <div className="text-sm font-bold text-primary leading-tight">
                     {profile.yearsExperience}
                   </div>
